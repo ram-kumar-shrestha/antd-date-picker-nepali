@@ -1,0 +1,7 @@
+node_modules
+src
+.git
+.gitignore
+.npmignore
+vite.config.ts
+main.tsx

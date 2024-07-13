@@ -1,0 +1,68 @@
+{
+  "name": "antd-date-picker-nepali",
+  "description": "This is a antd component for nepali datepicker.",
+  "private": false,
+  "keywords": [
+    "antd",
+    "date-picker",
+    "react",
+    "nepali"
+  ],
+  "author": {
+    "name": "Ram Kumar Shrestha"
+  },
+  "version": "0.0.1",
+  "type": "module",
+  "main": "dist/index.umd.js",
+  "types": "dist/index.d.ts",
+  "module": "dist/index.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.umd.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "bugs": "https://github.com/ram-kumar-shrestha/antd-date-picker-nepali/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ram-kumar-shrestha/antd-date-picker-nepali",
+    "directory": "packages/react"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "antd": "^5.19.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "peerDependencies": {
+    "antd": "^5.19.1",
+    "dayjs": "^1.11.11",
+    "nepali-date-converter": "^3.3.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "@typescript-eslint/parser": "^6.14.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "dayjs": "^1.11.11",
+    "eslint": "^8.55.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "nepali-date-converter": "^3.3.2",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.8",
+    "vite-plugin-dts": "^3.9.1"
+  }
+}
