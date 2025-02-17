@@ -11,7 +11,7 @@
   "author": {
     "name": "Ram Kumar Shrestha"
   },
-  "version": "0.0.3",
+  "version": "0.0.4",
   "type": "module",
   "main": "dist/index.umd.js",
   "types": "dist/index.d.ts",
