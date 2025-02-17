@@ -94,8 +94,6 @@ Besides Antd default props, the `NepaliDatePicker` component also accepts the fo
 
 - `type`: A string that determines the type of date picker to display. It can be either `"en"` for the default Ant Design DatePicker or `"ne"` for the custom Nepali date picker. If value not provided gregorian calender will be rendered.
 
-Here is an example of how to use the `type` prop:
-
 ## Contributing
 
 If you want to contribute to this project, please follow these steps:
