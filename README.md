@@ -1,32 +1,32 @@
-# antd-date-picker-nepali
+# Nepali Date Converter
 
-This is an Ant Design component for a Nepali datepicker.
+A TypeScript utility for converting between Gregorian (AD) and Nepali (BS) dates with high accuracy and type safety.
 
-## Description
+## Features
 
-`antd-date-picker-nepali` provides a date picker component with a calendar in the Bikram Sambat (BS) format, similar to the Ant Design DatePicker component.
+- Convert AD dates to BS (Nepali) dates and vice versa
+- Validate Nepali dates
+- Get weekday information
+- Get days in Nepali months
+- Type-safe with TypeScript support
 
 ## Installation
-
-You can install this package using npm or yarn:
 
 ```bash
 npm install antd-date-picker-nepali
 ```
 
-or
+## Quick Start
 
-```bash
-yarn add antd-date-picker-nepali
-```
+````typescript
+import NepaliDateConverter from 'antd-date-picker-nepali';
 
-## Usage
-
-First, ensure you have Ant Design and the required dependencies installed in your project:
+// Get today's date in Nepali calendar
+const todayNepali = NepaliDateConverter.getTodayBs();
 
 ```bash
 yarn add antd
-```
+````
 
 Then, you can use the Nepali date picker component in your React project as follows:
 
@@ -52,11 +52,15 @@ export default App;
 
 ```
 
-## Props
+## API Documentation
+
+For detailed information about the NepaliDateConverter utility and its methods, please refer to the [Converter Documentation](./CONVERTER.md).
+
+## Components
+
+### NepaliDatePicker
 
 The NepaliDatePicker component supports all the same props as the Ant Design DatePicker component. Please refer to the [Ant Design DatePicker documentation](https://ant.design/components/date-picker/) for detailed information.
-
-## Props
 
 Here is an example of how to use the NepaliDatePicker component with additional props:
 
@@ -87,7 +91,7 @@ export default App;
 
 ```
 
-## Props
+## Contributing
 
 If you want to contribute to this project, please follow these steps:
 

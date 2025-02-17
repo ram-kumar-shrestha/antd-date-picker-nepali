@@ -11,7 +11,7 @@
   "author": {
     "name": "Ram Kumar Shrestha"
   },
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "main": "dist/index.umd.js",
   "types": "dist/index.d.ts",
@@ -33,7 +33,7 @@
     "directory": "packages/react"
   },
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port 8000",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
@@ -46,7 +46,6 @@
   "peerDependencies": {
     "antd": "^5.19.1",
     "dayjs": "^1.11.11",
-    "nepali-date-converter": "^3.3.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -60,7 +59,6 @@
     "eslint": "^8.55.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
-    "nepali-date-converter": "^3.3.2",
     "typescript": "^5.2.2",
     "vite": "^5.0.8",
     "vite-plugin-dts": "^3.9.1"

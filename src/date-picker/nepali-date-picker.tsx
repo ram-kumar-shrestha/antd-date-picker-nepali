@@ -1,25 +1,17 @@
-import { ConfigProvider, DatePicker, DatePickerProps, Space } from "antd";
-import dayjs from "dayjs";
-import NepaliDate from "nepali-date-converter";
+import type { DatePickerProps } from "antd";
+import generatePicker from "antd/es/date-picker/generatePicker";
+import dayjs, { Dayjs } from "dayjs";
+import { nepaliDateConfig } from "./generate-config";
 import locale from "./ne_locale";
 
-const NepaliDatePicker = (props: DatePickerProps) => {
-  const nepaliDate = new NepaliDate();
-  const bsDate = nepaliDate.getBS();
+const CustomDatePicker = generatePicker<Dayjs>(nepaliDateConfig);
 
-  const dayjsDate = dayjs()
-    .year(bsDate.year)
-    .month(bsDate.month)
-    .date(bsDate.date)
-    .day(bsDate.day ?? 0);
+interface NepaliDatePickerProps extends Omit<DatePickerProps, "picker"> {
+  picker?: "date" | "week" | "month" | "year";
+}
 
-  return (
-    <ConfigProvider locale={locale}>
-      <Space direction="vertical">
-        <DatePicker defaultValue={dayjsDate} {...props} showNow={false} />
-      </Space>
-    </ConfigProvider>
-  );
+const NepaliDatePicker: React.FC<NepaliDatePickerProps> = (props) => {
+  return <CustomDatePicker {...props} locale={locale} defaultValue={dayjs()} />;
 };
 
 export default NepaliDatePicker;

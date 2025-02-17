@@ -7,7 +7,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: "./src/index.ts",
-      name: "antd-nepali-date-picker",
+      name: "antd-date-picker-nepali",
       fileName: (format) => `index.${format}.js`,
     },
     rollupOptions: {
@@ -18,7 +18,6 @@ export default defineConfig({
           "react-dom": "ReactDOM",
           dayjs: "dayjs",
           antd: "antd",
-          "nepali-date-converter": "nepali-date-converter",
         },
       },
     },
