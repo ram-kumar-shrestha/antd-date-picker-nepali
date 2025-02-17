@@ -11,7 +11,7 @@
   "author": {
     "name": "Ram Kumar Shrestha"
   },
-  "version": "0.0.4",
+  "version": "0.0.5",
   "type": "module",
   "main": "dist/index.umd.js",
   "types": "dist/index.d.ts",
@@ -61,6 +61,7 @@
     "eslint-plugin-react-refresh": "^0.4.5",
     "typescript": "^5.2.2",
     "vite": "^5.0.8",
-    "vite-plugin-dts": "^3.9.1"
+    "vite-plugin-dts": "^3.9.1",
+    "terser": "^5.24.0"
   }
 }

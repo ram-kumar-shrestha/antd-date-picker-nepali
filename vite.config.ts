@@ -2,7 +2,6 @@ import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 
-// https://vitejs.dev/config/
 export default defineConfig({
   build: {
     lib: {
@@ -11,20 +10,48 @@ export default defineConfig({
       fileName: (format) => `index.${format}.js`,
     },
     rollupOptions: {
-      external: ["react", "react-dom", "antd", "dayjs"],
+      external: [
+        "react",
+        "react-dom",
+        "antd",
+        "dayjs",
+        "@ant-design/icons",
+        "classnames",
+      ],
       output: {
         globals: {
           react: "React",
           "react-dom": "ReactDOM",
           dayjs: "dayjs",
           antd: "antd",
+          "@ant-design/icons": "AntdIcons",
+          classnames: "classNames",
         },
+        manualChunks: undefined,
+        minifyInternalExports: true,
       },
     },
     outDir: "dist",
-    sourcemap: true,
+    sourcemap: false,
     emptyOutDir: true,
+    minify: "terser",
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true,
+        pure_funcs: [
+          "console.log",
+          "console.info",
+          "console.debug",
+          "console.warn",
+        ],
+      },
+    },
+    reportCompressedSize: true,
+    chunkSizeWarningLimit: 1000,
   },
-
   plugins: [react(), dts()],
+  optimizeDeps: {
+    include: ["react", "react-dom", "antd", "dayjs"],
+  },
 });
