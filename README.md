@@ -18,15 +18,12 @@ npm install antd-date-picker-nepali
 
 ## Quick Start
 
-````typescript
-import NepaliDateConverter from 'antd-date-picker-nepali';
+```typescript
+import NepaliDateConverter from "antd-date-picker-nepali";
 
 // Get today's date in Nepali calendar
 const todayNepali = NepaliDateConverter.getTodayBs();
-
-```bash
-yarn add antd
-````
+```
 
 Then, you can use the Nepali date picker component in your React project as follows:
 
