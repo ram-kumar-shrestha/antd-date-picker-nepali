@@ -46,3 +46,9 @@ export type GenerateConfig<DateType> = {
     parse: (_: string, text: string) => DateType;
   };
 };
+
+export type NepaliDateProps = {
+  picker?: "date" | "week" | "month" | "year";
+  type?: "ne" | "en";
+  lang?: "ne" | "en";
+};

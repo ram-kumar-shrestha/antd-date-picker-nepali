@@ -2,22 +2,30 @@ import { PickerLocale } from "antd/es/date-picker/generatePicker";
 
 // Define Nepali month and day names
 const nepaliMonthNames = [
-  "Baishakh",
-  "Jestha",
-  "Ashad",
-  "Shrawan",
-  "Bhadra",
-  "Ashwin",
-  "Kartik",
-  "Mangsir",
-  "Poush",
-  "Magh",
-  "Falgun",
-  "Chaitra",
+  "बैशाख",
+  "जेठ",
+  "असार",
+  "श्रावण",
+  "भदौ",
+  "आश्विन",
+  "कार्तिक",
+  "मंसिर",
+  "पुष",
+  "माघ",
+  "फाल्गुन",
+  "चैत्र",
 ];
-const weekNepaliDayNames = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
+const weekNepaliDayNames = [
+  "आइत",
+  "सोम",
+  "मंगल",
+  "बुध",
+  "बिही",
+  "शुक्र",
+  "शनि",
+];
 
-const locale: PickerLocale = {
+const neLocale: PickerLocale = {
   lang: {
     locale: "ne",
     placeholder: "मिति चयन गर्नुहोस्",
@@ -56,4 +64,4 @@ const locale: PickerLocale = {
   },
 };
 
-export default locale;
+export default neLocale;

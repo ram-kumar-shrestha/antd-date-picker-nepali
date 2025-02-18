@@ -143,6 +143,7 @@ Both components support all standard Ant Design DatePicker props plus these addi
 | Prop | Type             | Default | Description              |
 | ---- | ---------------- | ------- | ------------------------ |
 | type | `"ne"` \| `"en"` | `"en"`  | Calendar type to display |
+| lang | `"ne"` \| `"en"` | `"en"`  | Calendar languange type  |
 
 ### NepaliDateConverter Methods
 

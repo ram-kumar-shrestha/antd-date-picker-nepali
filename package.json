@@ -6,12 +6,17 @@
     "antd",
     "date-picker",
     "react",
-    "nepali"
+    "nepali",
+    "nepali datepicker",
+    "nepali date picker",
+    "nepali datepicker react",
+    "nepali date picker react",
+    "datepicker"
   ],
   "author": {
     "name": "Ram Kumar Shrestha"
   },
-  "version": "0.0.5",
+  "version": "0.0.6",
   "type": "module",
   "main": "dist/index.umd.js",
   "types": "dist/index.d.ts",

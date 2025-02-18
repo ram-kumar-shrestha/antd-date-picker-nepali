@@ -3,23 +3,29 @@ import generatePicker from "antd/es/date-picker/generatePicker";
 import { Dayjs } from "dayjs";
 import { PickerRef } from "rc-picker";
 import { forwardRef } from "react";
+import { NepaliDateProps } from "../helper/type";
 import { nepaliDateConfig } from "./generate-config";
-import locale from "./ne_locale";
+import neLocale from "./ne-locale";
+import enLocale from "./ne-en.locale";
 
 const CustomDatePicker = generatePicker<Dayjs>(nepaliDateConfig);
 
-interface NepaliDatePickerProps extends Omit<DatePickerProps, "picker"> {
-  picker?: "date" | "week" | "month" | "year";
-  type?: "ne" | "en";
-}
+interface NepaliDatePickerProps
+  extends Omit<DatePickerProps, "picker" | "lang"> {}
 
-const NepaliDatePicker = forwardRef<PickerRef, NepaliDatePickerProps>(
-  (props, ref) => {
-    const { type, ...rest } = props;
-    if (type === "ne")
-      return <CustomDatePicker {...rest} locale={locale} ref={ref} />;
-    return <DatePicker {...rest} ref={ref} />;
-  }
-);
+const NepaliDatePicker = forwardRef<
+  PickerRef,
+  NepaliDatePickerProps & NepaliDateProps
+>((props, ref) => {
+  const { type, lang, ...rest } = props;
+
+  const locale = lang === "ne" ? neLocale : enLocale;
+
+  if (type === "ne")
+    return (
+      <CustomDatePicker {...rest} locale={locale} ref={ref} lang="nepali" />
+    );
+  return <DatePicker {...rest} ref={ref} />;
+});
 
 export default NepaliDatePicker;
