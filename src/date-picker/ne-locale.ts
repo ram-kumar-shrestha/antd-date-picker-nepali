@@ -1,7 +1,7 @@
 import { PickerLocale } from "antd/es/date-picker/generatePicker";
 
 // Define Nepali month and day names
-const nepaliMonthNames = [
+export const nepaliMonthNames = [
   "बैशाख",
   "जेठ",
   "असार",

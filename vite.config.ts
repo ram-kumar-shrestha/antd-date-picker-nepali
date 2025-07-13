@@ -7,7 +7,11 @@ export default defineConfig({
     lib: {
       entry: "./src/index.ts",
       name: "antd-date-picker-nepali",
-      fileName: (format) => `index.${format}.js`,
+      fileName: (format) => {
+        if (format === "cjs") return "index.cjs";
+        return `index.${format}.js`;
+      },
+      formats: ["es", "umd", "cjs"],
     },
     rollupOptions: {
       external: [

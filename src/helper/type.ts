@@ -4,6 +4,7 @@ export type NepaliDateType = {
   year: number;
   month: number;
   day: number;
+  monthName?: string;
 };
 
 export type NepaliDateDataType = {

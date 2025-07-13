@@ -4,7 +4,9 @@ import {
   START_ENGLISH_DATE_OF_2000_BS,
   START_WEEK_DAY_OF_2000,
 } from "./data";
-import { NepaliDateType } from "./type";
+import { NepaliDateProps, NepaliDateType } from "./type";
+import { nepaliMonthNames as NepaliMonths } from "../date-picker/ne-locale";
+import { nepaliMonthNames as NepaliMonthsEn } from "../date-picker/ne-en.locale";
 
 const START_ENGINE_DATE = dayjs(START_ENGLISH_DATE_OF_2000_BS);
 
@@ -67,12 +69,19 @@ class NepaliDateConverter {
    * @param {Dayjs | Date | string} adDate - The AD date to convert.
    * @returns {NepaliDateType} - The corresponding Nepali date.
    */
-  static adToBs(adDate: Dayjs | Date | string): NepaliDateType {
+  static adToBs(
+    adDate: Dayjs | Date | string,
+    lang: Pick<NepaliDateProps, "lang"> = { lang: "en" }
+  ): NepaliDateType {
+    const isNepali = lang.lang === "ne";
+    const months = isNepali ? NepaliMonths : NepaliMonthsEn;
     const date = dayjs(adDate);
-    if (!date.isValid()) return { year: 2000, month: 1, day: 1 };
+    if (!date.isValid())
+      return { year: 2000, month: 1, day: 1, monthName: months[0] };
     const diffDays = date.diff(START_ENGINE_DATE, "day");
 
-    if (diffDays < 0) return { year: 2000, month: 1, day: 1 };
+    if (diffDays < 0)
+      return { year: 2000, month: 1, day: 1, monthName: months[0] };
 
     let remainingDays = diffDays;
     let year = 2000;
@@ -98,12 +107,12 @@ class NepaliDateConverter {
 
         month = i + 1;
         day = remainingDays + 1;
-        return { year, month, day };
+        return { year, month, day, monthName: months[i] };
       }
       break;
     }
 
-    return { year, month, day: day || 1 }; // Ensure day is not NaN
+    return { year, month, day: day || 1, monthName: months[month - 1] }; // Ensure day is not NaN
   }
 
   /**
