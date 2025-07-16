@@ -16,7 +16,7 @@
   "author": {
     "name": "Ram Kumar Shrestha"
   },
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "main": "dist/index.cjs",
   "types": "dist/index.d.ts",
